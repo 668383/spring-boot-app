@@ -24,15 +24,14 @@ public class HelloControllerIT {
 	@Autowired
 	private TestRestTemplate template;
 
-    @BeforeEach
-    public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
-    }
+	@BeforeEach
+	public void setUp() throws Exception {
+		this.base = new URL("http://localhost:" + port + "/");
+	}
 
-    @Test
-    public void getHello() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(),
-                String.class);
-        assertThat(response.getBody()).contains("Greetings from Spring Boot!");
-    }
+	@Test
+	public void getHello() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		assertThat(response.getBody()).contains("add");
+	}
 }
